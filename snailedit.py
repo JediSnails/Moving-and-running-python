@@ -1,5 +1,5 @@
- #python snailedit.py -u root -t targets.txt -f ./script.sh config.cfg -d /opt/setup -c "chmod +x /opt/setup/script.sh" "/opt/setup/script.sh"
- 
+#python snailedit.py -u root -t targets.txt -f ./script.sh config.cfg -d /opt/setup -c "chmod +x /opt/setup/script.sh" "/opt/setup/script.sh"
+
 import argparse
 import subprocess
 import time
@@ -45,7 +45,7 @@ for host in hosts:
         full_cmd = f'echo "{password}" | sudo -S {cmd}'
         proc = subprocess.Popen(
             ["sshpass", "-p", password, "ssh",
-            "-o", "StrictHostKeyChecking=no", full_host, full_cmd],
+             "-o", "StrictHostKeyChecking=no", full_host, full_cmd],
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
             shell=False
         )
